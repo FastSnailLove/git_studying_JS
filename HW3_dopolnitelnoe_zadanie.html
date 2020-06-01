@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW3 Array</title>
+</head>
+<body>
+    <script>
+        //Создайте массив размерностью N элементов, выведите все элементы в обратном порядке.
+        let N=prompt("Введите размер массива ", "N");
+        N=parseInt(N);
+        let myNamArray=[];
+        for (let i=0; i<N; i++){
+            myNamArray[i]=i;
+        }
+        document.write("Mассив размерностью N элементов: "+myNamArray+"</br>");
+        let reversArray = myNamArray.reverse();
+        document.write("Элементы в обратном порядке: "+reversArray);
+    </script>
+</body>
+</html>

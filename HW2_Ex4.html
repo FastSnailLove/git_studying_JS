@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW2 Задание 4</title>
+</head>
+<body>
+    <script>
+        /* Используя циклы нарисуйте в браузере с помощью пробелов (&nbsp) и зездочек(*):
+        -прямоугольник
+        -прямоугольный тереугольник
+        -равносторонний треугольник 
+        -ромб.*/
+
+        let heightRectangle=8;
+        let widthRectangle=6;
+        for (let i=0; i<heightRectangle; i++){
+            document.write("</br>");
+            for(let j=0; j< widthRectangle; j++){
+                console.log("*");
+                document.write("*"+"&nbsp");
+            }
+        }
+        document.write("</br>")
+        //Прямоугольный треугольник
+        let heightTriangle=9;
+        let widthTringle=9;
+        for (let i=0; i<heightTriangle; i++){
+            document.write("</br>");
+            widthTringle--;
+            for(let j=0; j<= widthTringle; j++){
+                document.write("*"+"&nbsp");
+            }
+        }
+        document.write("</br>")
+
+        let yTriangle=9;
+        let xTringle=0;
+        for (let i=0; i<yTriangle; i++){
+            document.write("</br>");
+            for(let j=0; j<= xTringle; j++){
+                document.write("*"+"&nbsp");
+            }
+            xTringle++;
+        }
+        document.write("</br>")
+        
+        //Равносторонний треугольник
+        let h=6;
+        let w=0;//w=6;
+        for (let i=0; i<h; i++){
+            document.write("</br>");
+            let z=6;//z=0;
+            z--;//z++;
+            if(z>=w){//(z<=w){
+                w++;// уменьшает отступ на 1 и уменьшает строки прямоугольника на 1
+            }
+            for (let j=0; j<w; j++){
+                document.write("&nbsp"+"&nbsp");//рисует отступ от левого края
+            }
+            for (let y=6; y>=w; y--){
+                document.write("*"+"&nbsp"+"&nbsp");// рисует прямоугольник из звездочек
+            }
+        }
+        document.write("</br>");
+
+        //Ромб
+        let rhombusX=0;
+        let rhombusY=5;
+        let xSpace=5;
+        for (let i=0; i<rhombusY; i++){ //рисует прямоугольник из звездочек
+            document.write("</br>");
+            xSpace--;//переменная для изменения ко-ва пробелов в отступе слева
+            for (let j=0; j<=xSpace; j++){
+                document.write("&nbsp"+"&nbsp");//рисует отступ от левого края
+            }
+            for (let x=0; x<=rhombusX; x++){
+                document.write("*"+"&nbsp"+"&nbsp");// рисует ряд звездочек, количество которых = 7
+            }
+            rhombusX++;//переменная для изменения ко-ва звездочек
+        }
+
+        let X2=0;
+        let Y2=6;
+        for (let i=0; i<Y2; i++){
+            document.write("</br>");
+            let z2=7;
+            z2--;
+            if (z2>X2){
+                X2++;
+            }
+            for (let j=1; j<X2; j++){
+                document.write("&nbsp"+"&nbsp");//рисует отступ от левого края
+            }
+            for (let x=6; x>=X2; x--){
+                document.write("*"+"&nbsp"+"&nbsp");// рисует прямоугольник из звездочек
+            }
+        }
+    </script>
+</body>
+</html>

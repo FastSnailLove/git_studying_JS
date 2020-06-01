@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW3 Задание 3</title>
+</head>
+<body>
+    <script>
+        /*Требуется создать двумерный массив элементов размерностью 5*5 и заполнить его произвольными целочисленными значениями.
+        По главной диагонали все числа со знаком (-) заменить на 0, а числа со знаком (+) на число 1.*/
+        let myArr=[];
+        for (let i=0; i<5; i++){
+            let myCol=[];
+            myArr[i]=myCol;
+            for(let j=0; j<5; j++){
+                let elements = Math.floor(Math.random() *(10-(-10)+1))+(-10);
+                myCol.push(elements);
+            }
+        }
+        console.log(myArr);
+        let changeArr=[[],[],[],[],[]];
+        for (let i=0; i<5; i++){
+            for(let j=0; j<5; j++){
+            changeArr[i][j]=myArr[i][j];
+            }
+        }
+        for (let i=0; i<5; i++){
+            document.write(changeArr[i]+"</br>");//выводит двумерный массив 5*5
+            for(let j=0; j<5; j++){
+                if(j==i && changeArr[i][j]>0){
+                    changeArr[i][j]=1;
+                console.log(changeArr[i][j]);
+                }
+                if(j==i && changeArr[i][j]<=0){
+                    changeArr[i][j]=0;
+                console.log(changeArr[i][j]);
+                }
+            }
+        }
+        document.write("</br>"+changeArr.join("</br>"));
+        console.log(changeArr);
+    </script>
+</body>
+</html>

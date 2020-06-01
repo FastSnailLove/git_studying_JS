@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW2 Задание 2</title>
+</head>
+<body>
+    <script>
+/* Дано два числа А и В где (А<B).
+Выведите на экран сумму всех чисел, расположенных в числовом промежутке от А до В.
+Выведите на экран все нечетные значения, расположенные в числовом промежутке от А до В.*/
+
+let A=1;
+let B=36;
+let summaAB=0;
+document.write("Нечетные значения: ");
+for(let i=A; i<=B; i++){
+    if (A%2>0){
+        console.log(A); 
+        document.write(A+" ");
+} 
+    if (A<=B){
+        summaAB+=A
+        A+=1;
+    }
+}
+document.write("</br>"+"SummaAB "+summaAB);
+
+/*for (let i=A; i<=B; i++){
+    if (A%2>0){
+        console.log(A); 
+        document.write(A+" ");
+} 
+    if (A<=B){
+        A+=1;
+    }
+}*/
+    </script>
+</body>
+</html>

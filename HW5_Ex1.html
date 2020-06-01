@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW5 Задание 1</title>
+</head>
+<body>
+    <script>
+        /*Создать обьект "Документ", в котором определить свойства " Заголовок,
+        Тело, Футер, Дата". Создать в обьекте вложенный обьект - "Приложение". Создать 
+        в обьекте "Приложение", вложенные обьекты," Заголовок, Тело, Футер, Дата".
+        Создать методы для заполнения и отображения документа. */
+        let inputHeadSentence = prompt("Введите заголовок.");
+        let bodyArticle = prompt("Введите текст статьи.");
+        let doc = {
+            header:"zagolovok",
+            body:"telo",
+            footer:"futer",
+            data:"27.05.20",
+
+            application : {
+                headerApp : {
+                    InputHeader: function (inputHeadSentence) {
+                    document.write(inputHeadSentence+ "</br>");  
+                    }
+                },
+                body : {
+                    InputBodyText:function (bodyArticle) {
+                    document.write(bodyArticle+"</br>");    
+                    }
+                },
+                footer : {},
+                data : {}
+            }
+        }
+        doc.application.headerApp.InputHeader(inputHeadSentence);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW4_Ex1</title>
+</head>
+<body>
+    <script>
+        let a=parseInt(prompt("Значение 1"));
+        let b=parseInt(prompt("Значение 2"));
+        function Add (x, y){//сложение
+            return x+y;
+        }
+        function Sub (x, y){//вычетание
+            return x-y;
+        } 
+        function Mul (x, y){//умножение
+            return x*y;
+        } 
+        function Div (x, y){//деление
+            if(y!=0){
+                return x/y;
+            } else if(y==0){
+                let d;
+                return  d ="На ноль делить нельзя!!!";
+        }
+        }
+        let arithmeticOperations=prompt("Выберите арифметичискую операцию. Для сложения введите +, для вычетания -, для умножения *,для деления /." );
+        if (arithmeticOperations=="+"){
+            document.write(Add(a,b)) ;
+        } else if( arithmeticOperations=="-"){
+            document.write( Sub(a,b));
+        } else if (arithmeticOperations=="*"){
+            document.write(Mul(a,b)) ;
+        } else if (arithmeticOperations=="/"){
+            document.write(Div(a,b)) ;
+        } else { document.write("Вы ввели неверное значение. Невозможно выполнить арифметическую операцию.")}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW3 Задание 2</title>
+</head>
+<body>
+    <script>
+        /*Требуется создать массив размерностью N элементов, заполнить его произвольными целыми значениями.
+        Вывести наибольшее значение массива, наименьшее значение массива, общую сумму элементов, среднее арифметическое всех элементов,
+        вывести все нечетные значения*/
+        let N= parseInt(prompt("Введите размер массива: ", "0"));
+        let myArray=[];
+        for (let i=0; i<N; i++){
+            let arrayElements = Math.floor(Math.random() *10);
+            myArray[i]=arrayElements;
+        }
+        document.write("</br>"+myArray); //.join(" | ")
+        //наибольшее значение массива
+        let max=0;
+        for (let i=0; i<myArray.length; i++){
+            if(max<myArray[i]){
+                max=myArray[i];
+            }
+        }
+        document.write("</br>"+"Максимальное значение массива: "+max);
+        // наименьшее значение массива
+        let min=myArray[0];
+        for (let i=0; i<myArray.length; i++){
+            if(min>myArray[i]){
+                min=myArray[i];
+            }
+        }
+        document.write("</br>"+"Минимальное значение массива: "+min);
+        //общая сумма элементов
+        let sum=0;
+        for (let i=0; i<myArray.length; i++){
+            sum+=myArray[i];
+        }
+        document.write("</br>"+"Общая сумма элементов: "+sum);
+        //среднее арифметическое всех элементов
+        document.write("</br>"+"Среднее арифметическое всех элементов: "+(sum/myArray.length).toFixed(2));
+        //вывести все нечетные значения
+        res=[];
+        for (let i=0; i<myArray.length; i++){
+            if (myArray[i]%2>0){
+                res.push(myArray[i]);
+            }
+        }
+        document.write("</br>"+"Нечетные значения: "+res);
+    </script>
+</body>
+</html>

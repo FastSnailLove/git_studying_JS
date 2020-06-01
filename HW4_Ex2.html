@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW4 Ex2</title>
+</head>
+
+<body>
+    <script>
+        /*Напишите функцию, которая будет принимать число и определять:
+            1. Является ли введенное число положительным или отрицательным.
+            2. Является ли оно простым
+            3. Делится ли оно на 2, 5, 3, 6, 9 без остатка*/
+        let num = prompt("Введете число: ");
+        function PositiveNegativeNum(x) {
+            x = parseInt(x);
+            if (x > 0) {
+                return document.write("Положетельное число." + "</br>");
+            } else if (x < 0) {
+                return document.write("Отрицательное число." + "</br>");
+            } else { return document.write("Ноль как особое число не имеет знака." + "</br>"); }
+        }
+        PositiveNegativeNum(num);
+        //Простое число
+        function PrimeNum(x) {
+            x = parseInt(x);
+            if (x > 1) {
+                let primeArray = [];
+                for (let i = 1; i <= x; i++) {
+                    if (x % i == 0) {
+                        primeArray.push(i);
+                    }
+                }
+                if (primeArray.length == 2) {
+                    return document.write("Простое число" + "</br>");
+                } else { return document.write("Число не является простым" + "</br>"); }
+            } else {
+                return document.write("Число не является простым" + "</br>");
+            }
+        }
+        PrimeNum(num);
+        // Признаки делимости на 2, 5, 3, 6, 9
+        function DivisibilityRule(x) {
+            numX = parseInt(x);//число типа number
+            let xArray = [];
+            //проверка делимости на 2
+            if (numX % 2 == 0) {
+                document.write("Число делится на 2 " + "</br>");
+            }
+            //проверка делимости на 5
+            if (numX % 10 == 0 || numX % 10 == 5) {
+                document.write("Число делится на 5" + "</br>");
+            }
+            //проверка делимости на 3
+            for (let i = 0; i < x.length; i++) {
+                let lastNumX = numX - ((Math.trunc(numX / 10)) * 10);// последняя цыфра числа
+                xArray.push(lastNumX);
+                numX = Math.trunc(numX / 10);//возвращает целую часть числа путём удаления всех дробных знаков.
+            }
+            let sum = 0;
+            for (let j = 0; j < xArray.length; j++) {
+                sum += xArray[j];
+            }
+            if (sum % 3 == 0) {
+                document.write("Число делится на 3 " + "</br>");
+            }
+            //проверка делимости на 6
+            if (sum % 3 == 0 && numX % 2 == 0) {
+                document.write("Число делится на 6 " + "</br>");
+            }
+            //проверка делимости на 9
+            if (sum % 9 == 0) {
+                document.write("Число делится на 9 " + "</br>");
+            }
+        }
+        DivisibilityRule(num);
+    </script>
+</body>
+
+</html>
